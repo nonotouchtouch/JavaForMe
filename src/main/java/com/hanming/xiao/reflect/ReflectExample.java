@@ -7,7 +7,7 @@ public class ReflectExample {
     /**
      * 构造方法
      */
-    private ReflectExample(){ }
+    public ReflectExample(){ }
 
     /**
      * 构造方法
@@ -23,6 +23,11 @@ public class ReflectExample {
     public void sayHiWithName(){
         System.out.println("Hi, " + this.name +".");
     }
+
+    public void sayHiWithName(String name){
+        System.out.println("Hi, " + name +".");
+    }
+
 
     /**
      * 用于获取对象
