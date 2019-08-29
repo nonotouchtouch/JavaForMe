@@ -1,8 +1,7 @@
-package com.hanming.xiao.reflect;
+package com.hanming.xiao.reflect1;
 
 public class ReflectExample {
 
-    private String name;
 
     /**
      * 构造方法
@@ -10,10 +9,25 @@ public class ReflectExample {
     public ReflectExample(){ }
 
     /**
-     * 构造方法
+     * 带参构造方法
      */
     public ReflectExample(String name){
         this.name=name;
+    }
+
+
+
+    /**
+     * 变量
+     */
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void sayHi(){
@@ -36,7 +50,7 @@ public class ReflectExample {
      * @throws Exception
      */
     public static ReflectExample getInstance() throws Exception{
-        return (ReflectExample) Class.forName("com.hanming.xiao.reflect.ReflectExample").newInstance();
+        return (ReflectExample) Class.forName("com.hanming.xiao.reflect1.ReflectExample").newInstance();
     }
 
     /**
@@ -46,7 +60,7 @@ public class ReflectExample {
      * @throws Exception
      */
     public static ReflectExample getInstance(String name) throws Exception{
-        return (ReflectExample) Class.forName("com.hanming.xiao.reflect.ReflectExample").
+        return (ReflectExample) Class.forName("com.hanming.xiao.reflect1.ReflectExample").
                 getConstructor(String.class).newInstance(name);
     }
 }
